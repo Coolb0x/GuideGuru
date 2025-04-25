@@ -12,6 +12,7 @@
     "test": "test_command"
   },
   "dependencies": {
+    "@slack/bolt": "^4.2.1",
     "dotenv": "^16.4.7",
     "express": "^5.0.1",
     "helmet": "^8.1.0",
