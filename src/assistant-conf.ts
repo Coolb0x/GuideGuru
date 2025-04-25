@@ -11,7 +11,7 @@ export const openai = new OpenAI({
 });
 
 // Store thread IDs per channel/thread combination
-// In production I will monitor memory and decie if a LRU or Periodic cleanup is needed
+// In production I will monitor memory and decide if a LRU or Periodic cleanup is needed
 const threadContexts: ThreadContexts = {};
 
 export const assistant = new Assistant({
@@ -46,7 +46,7 @@ export const assistant = new Assistant({
   // The below threadStarted method handles Slack "New Chat" button
   threadStarted: async ({ say }: ThreadStartedParams) => {
     await say(
-      "I'll be happy to  help with any questions related to procedures and tools available in kb.sales.info, but you can also ask me about different tech sfuff."
+      "I'll be happy to  help with any questions related to procedures and tools available in kb.sgsales.info, but you can also ask me about different tech stuff."
     );
   },
 });
