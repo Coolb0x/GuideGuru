@@ -24,9 +24,15 @@ export async function runAssistant(assistantId: string, threadId: any, userInput
       runStatus.status !== "cancelled" &&
       runStatus.status !== "expired"
     ) {
+      // Should change to half a sec when calling Functions
       await new Promise(resolve => setTimeout(resolve, 1000)); // Poll every 1 second
       runStatus = await openai.beta.threads.runs.retrieve(threadId, run.id);
     }
+    // Should plug in here status = action_needed
+    // Once the status is returned, it should have the function name
+    // Then call the tools > all required functions should be more than one should be executed
+    // Return of all tools should be to the specific endpoint with the thredid and tool call combined of all at once
+    // Submit the response from tools
 
     if (runStatus.status === "completed") {
       // Retrieve Messages
